@@ -1,12 +1,14 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ContextProvider } from './Context';
 import HomePage from './HomePage';
+import House from './House';
 
 export const App = () => {
   return (
     <ContextProvider>
       <HomePage />
+      {/* <House /> */}
     </ContextProvider>
   );
 };

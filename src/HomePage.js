@@ -5,7 +5,7 @@ import { Card, Container, Row, Col, Button, Spinner } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const HomePage = () => {
-  const { fetchRealEstate, handlePrice, loading, realEstateList } =
+  const { fetchRealEstate, fetchHouse, priceHandler, loading, realEstateList } =
     useContext(Context);
 
   useEffect(() => {
@@ -22,19 +22,16 @@ const HomePage = () => {
           {realEstateList.map((house) => {
             const { id, title, image, price, address } = house;
             return (
-              <Col>
-                <Card
-                  style={{ width: '300px' }}
-                  className="mx-auto mb-2 md-fluid"
-                  key={id}
-                >
+              <Col key={id}>
+                <Card className="mx-auto mb-4 fluid">
                   <Card.Img src={image} className="card-image" />
                   <Card.Body>
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>{address}</Card.Text>
                     <Card.Title className="price-tag">
-                      {handlePrice(price)}
+                      {priceHandler(price)}
                     </Card.Title>
+                    {/* <Link to='~/house/id'>Details</Link> */}
                     <Button>Details</Button>
                   </Card.Body>
                 </Card>
@@ -57,6 +54,9 @@ const Wrapper = styled.main`
   .container {
     margin: 0 auto;
   }
+  .card {
+    width: 300px;
+  }
   .card-image {
     height: 15rem;
     object-fit: cover;
@@ -69,6 +69,11 @@ const Wrapper = styled.main`
   @media (max-width: 767px) {
     .small-screen-centering {
       width: 300px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .col {
+      max-width: 330px;
     }
   }
 `;
