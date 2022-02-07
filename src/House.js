@@ -1,7 +1,7 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Context } from './Context';
 import styled from 'styled-components';
-import { Container, Image, Button } from 'react-bootstrap';
+import { Container, Image, Button, Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const House = () => {
@@ -34,6 +34,17 @@ const House = () => {
           location location quam felis, ultricies nec, pellentesque
           rent-controlled tenant in place, pretium quis, sem.
         </p>
+        <Carousel className="my-5">
+          {gallery.map((image) => {
+            return (
+              <Carousel.Item>
+                <Container className="img-container">
+                  <img className="w-100 h-100" src={image} alt="" />
+                </Container>
+              </Carousel.Item>
+            );
+          })}
+        </Carousel>
         <p className="text-uppercase fst-italic">Tiffany Marin</p>
         <Button>Contact Agent</Button>
       </Container>
