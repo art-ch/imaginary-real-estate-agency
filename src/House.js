@@ -37,10 +37,8 @@ const House = () => {
         <Carousel className="my-5">
           {gallery.map((image) => {
             return (
-              <Carousel.Item>
-                <Container className="img-container">
-                  <img className="w-100 h-100" src={image} alt="" />
-                </Container>
+              <Carousel.Item className="img-container">
+                <img src={image} alt="" />
               </Carousel.Item>
             );
           })}

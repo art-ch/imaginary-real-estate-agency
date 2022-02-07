@@ -7,8 +7,8 @@ import House from './House';
 export const App = () => {
   return (
     <ContextProvider>
-      {/* <HomePage /> */}
-      <House />
+      <HomePage />
+      {/* <House /> */}
     </ContextProvider>
   );
 };

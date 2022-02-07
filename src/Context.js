@@ -11,9 +11,11 @@ const ContextProvider = ({ children }) => {
   const fetchRealEstate = async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://demo0733949.mockable.io/houses');
+      const response = await fetch(
+        'https://imaginary-real-estate-agency.free.beeceptor.com/houses'
+      );
       const data = await response.json();
-
+      console.log(data);
       const { houses } = data;
 
       if (houses) {
@@ -33,10 +35,10 @@ const ContextProvider = ({ children }) => {
     setLoading(true);
     try {
       const fetchHouse = await fetch(
-        `https://demo0733949.mockable.io/houses/house/${houseID}`
+        `https://imaginary-real-estate-agency.free.beeceptor.com/house/${houseID}`
       );
       const fetchGallery = await fetch(
-        'https://demo0733949.mockable.io/gallery'
+        'https://imaginary-real-estate-agency.free.beeceptor.com/gallery'
       );
 
       const house = await fetchHouse.json();
