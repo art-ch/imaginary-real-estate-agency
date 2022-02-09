@@ -1,6 +1,6 @@
 import { priceHandler } from './utils';
 
-export const fetchRealEstate = async (hook) => {
+export const fetchRealEstate = async () => {
   try {
     const response = await fetch('https://demo0733949.mockable.io/houses');
     const data = await response.json();
@@ -11,14 +11,14 @@ export const fetchRealEstate = async (hook) => {
         const { id, title, price, address, image } = house;
         return { id, title, price: priceHandler(price), address, image };
       });
-      return hook(newRealEstate);
+      return newRealEstate;
     }
   } catch (error) {
     console.log(error);
   }
 };
 
-export const getHouse = async (houseID, hook) => {
+export const getHouse = async (houseID) => {
   try {
     const fetchHouse = await fetch(
       `https://demo0733949.mockable.io/houses/house/${houseID}`
@@ -28,7 +28,7 @@ export const getHouse = async (houseID, hook) => {
     const house = await fetchHouse.json();
     const gallery = await fetchGallery.json();
 
-    return hook({ house, gallery });
+    return { house, gallery };
   } catch (error) {
     console.log(error);
   }

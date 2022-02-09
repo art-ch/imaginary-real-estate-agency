@@ -1,18 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { fetchRealEstate } from '../api';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+import { getRealEstate } from '../redux/ducks/getRealEstate';
+
 import HomePageWrapper from '../styled/HomePage';
 import { Card, Container, Row, Col, Button, Spinner } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const HomePage = () => {
-  const [realEstateList, setRealEstateList] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchRealEstate(setRealEstateList);
-
-    // eslint-disable-next-line
+    dispatch(getRealEstate());
   }, []);
+
+  const realEstateList = useSelector(
+    (state) => state.getRealEstateReducer.realEstate
+  );
 
   return (
     <HomePageWrapper>
