@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { getRealEstate } from '../redux/ducks/getRealEstate';
 
@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const HomePage = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getRealEstate());
@@ -22,20 +23,24 @@ const HomePage = () => {
   return (
     <HomePageWrapper>
       <h1 className="page-title">Imaginary Real Estate Agency</h1>
-      {/* {loading && <Spinner animation="border" variant="primary" />} */}
+      {realEstateList.length === 0 && (
+        <Spinner animation="border" variant="primary" />
+      )}
       <Container>
-        <Row>
+        <Row className="g-lg-3 g-xl-4 g-5">
           {realEstateList.map((house) => {
             const { id, title, image, price, address } = house;
             return (
-              <Col key={id}>
-                <Card className="mx-auto mb-4 fluid">
+              <Col className="col-lg-4 col-xl-3" key={id}>
+                <Card className="mx-auto">
                   <Card.Img src={image} className="card-image" />
                   <Card.Body>
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>{address}</Card.Text>
                     <Card.Title className="price-tag">{price}</Card.Title>
-                    <Link to={`/houses/house/${id}`}>Details</Link>
+                    <Button onClick={() => navigate(`/houses/house/${id}`)}>
+                      Details
+                    </Button>
                   </Card.Body>
                 </Card>
               </Col>

@@ -13,18 +13,6 @@ const HouseWrapper = styled.main`
   .container {
     max-width: 1000px;
   }
-
-  @media (min-width: 767px) {
-    .img-container {
-      height: 400px;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .img-container {
-      height: 570px;
-    }
-  }
 `;
 
 export default HouseWrapper;
