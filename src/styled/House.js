@@ -5,15 +5,6 @@ const HouseWrapper = styled.main`
   .container {
     max-width: 1000px;
   }
-
-  .btn-container {
-    .house-btn {
-      width: 140px;
-    }
-    .back-btn {
-      width: 288px;
-    }
-  }
 `;
 
 export default HouseWrapper;
