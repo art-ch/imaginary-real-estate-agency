@@ -1,14 +1,12 @@
-import './App.css';
 import React from 'react';
-import { ContextProvider } from './Context';
-import HomePage from './HomePage';
-import House from './House';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HomePage, House } from './components';
 
-export const App = () => {
-  return (
-    <ContextProvider>
-      <HomePage />
-      {/* <House /> */}
-    </ContextProvider>
-  );
-};
+export const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route exact path="/" element={<HomePage />} />
+      <Route exact path="/houses/house/:id" element={<House />} />
+    </Routes>
+  </BrowserRouter>
+);
