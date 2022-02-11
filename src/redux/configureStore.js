@@ -2,7 +2,7 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from '@redux-saga/core';
 import getRealEstateReducer from './ducks/getRealEstate';
 import getHouseReducer from './ducks/getHouse';
-import { watcherSaga } from './sagas/rootSaga';
+import { watcherSaga } from './rootSaga';
 
 const reducer = combineReducers({ getRealEstateReducer, getHouseReducer });
 

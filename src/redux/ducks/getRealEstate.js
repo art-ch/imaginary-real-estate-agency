@@ -1,3 +1,6 @@
+import { call, put } from 'redux-saga/effects';
+import { fetchRealEstate } from '../../api';
+
 export const GET_HOUSES = 'GET_HOUSES';
 export const SET_HOUSES = 'SET_HOUSES';
 
@@ -19,5 +22,14 @@ export default function reducer(state = initialStore, action = {}) {
       return { ...state, realEstate: houses };
     default:
       return state;
+  }
+}
+
+export function* handleRealEstate() {
+  try {
+    const data = yield call(fetchRealEstate);
+    yield put(setRealEstate(data));
+  } catch (error) {
+    console.log(error);
   }
 }

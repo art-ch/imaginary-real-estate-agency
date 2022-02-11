@@ -1,3 +1,6 @@
+import { call, put } from 'redux-saga/effects';
+import { fetchHouse } from '../../api';
+
 export const GET_SINGLE_HOUSE = 'GET_HOUSE';
 export const SET_SINGLE_HOUSE = 'SET_HOUSE';
 export const RESET_SINGLE_HOUSE = 'RESET_SINGLE_HOUSE';
@@ -25,5 +28,15 @@ export default function reducer(state = initialStore, action = {}) {
       return { ...state, house: {} };
     default:
       return state;
+  }
+}
+
+export function* handleHouse(action) {
+  const id = action.payload.id;
+  try {
+    const data = yield call(fetchHouse, id);
+    yield put(setSingleHouse(data));
+  } catch (error) {
+    console.log(error);
   }
 }

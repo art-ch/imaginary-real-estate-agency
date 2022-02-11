@@ -6,14 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import store from './redux/configureStore';
 import { Provider } from 'react-redux';
 
-import GlobalStylesWrapper from './styled/GlobalStyles';
+import GlobalStyle from './styled/GlobalStyle';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <GlobalStylesWrapper>
-        <App />
-      </GlobalStylesWrapper>
+      <GlobalStyle />
+      <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
