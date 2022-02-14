@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
 
 import HomePageWrapper from '../styled/HomePage';
-import { Card, Container, Row, Col, Button, Spinner } from 'react-bootstrap';
-
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getRealEstate } from '../redux/ducks/getRealEstate';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Card, Container, Row, Col, Button, Spinner } from 'react-bootstrap';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,9 @@ const HomePage = () => {
             return (
               <Col className="col-lg-4 col-xl-3" key={id}>
                 <Card className="mx-auto">
-                  <Card.Img src={image} className="card-image" />
+                  <a href={image} alt="">
+                    <Card.Img src={image} className="card-image" />
+                  </a>
                   <Card.Body>
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>{address}</Card.Text>

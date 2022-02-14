@@ -71,12 +71,6 @@ const House = () => {
               })}
             </Row>
           </Container>
-          <Container className="p-0">
-            <Row className="flex-column flex-sm-row">
-              <Col></Col>
-              <Col></Col>
-            </Row>
-          </Container>
         </Container>
       </HouseWrapper>
     );
