@@ -9,17 +9,19 @@ export const getSingleHouse = (id) => {
   return { type: GET_SINGLE_HOUSE, payload: { id } };
 };
 export const setSingleHouse = (house) => {
+  console.log(house);
+
   return { type: SET_SINGLE_HOUSE, house };
 };
 export const resetSingleHouse = () => {
   return { type: RESET_SINGLE_HOUSE };
 };
 
-const initialStore = {
-  house: [],
+const initialState = {
+  house: []
 };
 
-export default function reducer(state = initialStore, action = {}) {
+export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
     case SET_SINGLE_HOUSE:
       const { house } = action;

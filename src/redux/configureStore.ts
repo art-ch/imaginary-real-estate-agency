@@ -14,4 +14,7 @@ const store = createStore(reducer, {}, applyMiddleware(...middleware));
 
 sagaMiddleware.run(watcherSaga);
 
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+
 export default store;

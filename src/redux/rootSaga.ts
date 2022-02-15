@@ -1,4 +1,4 @@
-import { takeLatest } from 'redux-saga/effects';
+import { takeLatest, StrictEffect } from 'redux-saga/effects';
 
 import { GET_HOUSES } from './ducks/getRealEstate';
 import { GET_SINGLE_HOUSE } from './ducks/getHouse';
