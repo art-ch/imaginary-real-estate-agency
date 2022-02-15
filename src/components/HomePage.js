@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { Card, Container, Row, Col, Button, Spinner } from 'react-bootstrap';
 
 import HomePageWrapper from '../styled/HomePage';
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { getRealEstate } from '../redux/ducks/getRealEstate';
 
+import { getRealEstate } from '../redux/ducks/getRealEstate';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Card, Container, Row, Col, Button, Spinner } from 'react-bootstrap';
 
 const HomePage = () => {
   const dispatch = useDispatch();

@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-import HouseWrapper from '../styled/House';
-import { Container, Row, Col, Image, Button, Spinner } from 'react-bootstrap';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Container, Row, Col, Image, Button, Spinner } from 'react-bootstrap';
+
+import HouseWrapper from '../styled/House';
+
 import { getSingleHouse, resetSingleHouse } from '../redux/ducks/getHouse';
 import { priceHandler } from '../utils';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const House = () => {
   const { id } = useParams();

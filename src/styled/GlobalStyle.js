@@ -7,19 +7,7 @@ const GlobalStyle = createGlobalStyle`
     object-fit: cover;
   }
 
-  .img-container {
-    height: 300px;
-  }
-  @media (min-width: 767px) {
-    .img-container {
-      height: 500px;
-    }
-  }
-  @media (min-width: 1200px) {
-    .img-container {
-      height: 570px;
-    }
-  }
+  ${({ mediaCreator }) => mediaCreator()}
 `;
 
 export default GlobalStyle;
