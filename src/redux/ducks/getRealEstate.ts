@@ -10,17 +10,20 @@ export const getRealEstate = () => {
   return { type: GET_HOUSES };
 };
 export const setRealEstate = (houses: RealEstateSchema) => {
-  return { type: SET_HOUSES, houses };
+  return { type: SET_HOUSES, payload: { houses } };
 };
 
-const initialState: RealEstateSchema = {
+const initialState = {
   realEstate: []
 };
 
-export default function reducer(state = initialState, action: Action) {
+export default function reducer(
+  state: RealEstateSchema = initialState,
+  action: Action
+) {
   switch (action.type) {
     case SET_HOUSES:
-      const { houses } = action;
+      const { houses } = action.payload;
       return { ...state, realEstate: houses };
     default:
       return state;

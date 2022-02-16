@@ -19,6 +19,13 @@ export interface FetchedHouseSchema {
 
 export interface Action {
   type: string;
-  house?: HouseSchema;
-  houses?: RealEstateSchema;
+  payload: {
+    id?: string;
+    house?: HouseSchema;
+    houses?: RealEstateSchema;
+  };
+}
+
+export interface Theme {
+  device: Record<string, string>;
 }

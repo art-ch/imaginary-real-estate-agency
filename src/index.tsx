@@ -6,13 +6,12 @@ import store from './redux/configureStore';
 
 import GlobalStyle from './styled/GlobalStyle';
 
-import { mediaCreator } from './utils';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <GlobalStyle mediaCreator={mediaCreator} />
+      <GlobalStyle />
       <App />
     </Provider>
   </React.StrictMode>,

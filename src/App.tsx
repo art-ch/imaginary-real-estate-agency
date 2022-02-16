@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { HomePage, House } from './components';
@@ -12,4 +11,4 @@ const App = () => (
   </BrowserRouter>
 );
 
-export default App
+export default App;

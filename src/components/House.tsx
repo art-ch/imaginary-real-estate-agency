@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Image, Button, Spinner } from 'react-bootstrap';
@@ -17,12 +17,12 @@ const House = () => {
   useEffect(() => {
     dispatch(getSingleHouse(id));
     return () => {
-      dispatch(resetSingleHouse(id));
+      dispatch(resetSingleHouse());
     };
     // eslint-disable-next-line
   }, []);
 
-  const currentHouse = useSelector((state) => state.getHouseReducer.house);
+  const currentHouse = useSelector((state: any) => state.getHouseReducer.house);
   const { house, gallery } = currentHouse;
 
   if (house && gallery) {
@@ -60,7 +60,7 @@ const House = () => {
           <Container className="p-0">
             <Row>
               <h2 className="text-center">Gallery</h2>
-              {gallery.map((image, id) => {
+              {gallery.map((image: string, id: number) => {
                 return (
                   <Col className="mb-3 col-12 col-sm-4 col-xl-3" key={id}>
                     <a href={image}>

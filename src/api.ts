@@ -36,7 +36,7 @@ export const fetchRealEstate = async (): Promise<RealEstateSchema> => {
 };
 
 export const fetchHouse = async (
-  houseID: number
+  houseID: string
 ): Promise<FetchedHouseSchema> => {
   try {
     const house = await fetchData(`houses/house/${houseID}`);
