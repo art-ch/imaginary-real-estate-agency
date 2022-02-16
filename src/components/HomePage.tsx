@@ -8,6 +8,7 @@ import HomePageWrapper from '../styled/HomePage';
 import { getRealEstate } from '../redux/ducks/getRealEstate';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { HouseSchema } from '../interfaces';
+import { RootState } from '../interfaces';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -18,9 +19,9 @@ const HomePage = () => {
     // eslint-disable-next-line
   }, []);
 
-  const realEstateList = useSelector(
-    (state: any) => state.getRealEstateReducer.realEstate
-  );
+  const realEstateList = useSelector((state: RootState) => {
+    return state.getRealEstateReducer.realEstate;
+  });
 
   return (
     <HomePageWrapper>

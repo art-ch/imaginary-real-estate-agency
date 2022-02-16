@@ -1,9 +1,6 @@
-import * as Eff from 'redux-saga/effects';
+import { put, call } from 'redux-saga/effects';
 import { fetchHouse } from '../../api';
 import { Action, FetchedHouseSchema } from '../../interfaces';
-
-const call: any = Eff.call;
-const put: any = Eff.put;
 
 export const GET_SINGLE_HOUSE = 'GET_HOUSE';
 export const SET_SINGLE_HOUSE = 'SET_HOUSE';
@@ -40,6 +37,7 @@ export function* handleHouse(action: Action) {
   const id = action.payload.id;
   try {
     const data: FetchedHouseSchema = yield call(fetchHouse, id);
+
     yield put(setSingleHouse(data));
   } catch (error) {
     console.log(error);

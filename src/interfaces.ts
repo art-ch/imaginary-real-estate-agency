@@ -17,6 +17,11 @@ export interface FetchedHouseSchema {
   gallery: string[];
 }
 
+export interface RootState {
+  getRealEstateReducer: { realEstate: HouseSchema[] };
+  getHouseReducer: { house: FetchedHouseSchema };
+}
+
 export interface Action {
   type: string;
   payload: {

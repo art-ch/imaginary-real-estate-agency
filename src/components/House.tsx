@@ -5,9 +5,10 @@ import { Container, Row, Col, Image, Button, Spinner } from 'react-bootstrap';
 
 import HouseWrapper from '../styled/House';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { getSingleHouse, resetSingleHouse } from '../redux/ducks/getHouse';
 import { priceHandler } from '../utils';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { RootState } from '../interfaces';
 
 const House = () => {
   const { id } = useParams();
@@ -22,7 +23,9 @@ const House = () => {
     // eslint-disable-next-line
   }, []);
 
-  const currentHouse = useSelector((state: any) => state.getHouseReducer.house);
+  const currentHouse = useSelector(
+    (state: RootState) => state.getHouseReducer.house
+  );
   const { house, gallery } = currentHouse;
 
   if (house && gallery) {
