@@ -3,7 +3,7 @@ export interface RealEstateSchema {
 }
 
 export interface HouseSchema {
-  id: number;
+  id: string;
   title: string;
   price: number;
   address: string;

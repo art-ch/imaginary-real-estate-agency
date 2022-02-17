@@ -1,4 +1,4 @@
-import { put, call } from 'redux-saga/effects';
+import { put, call, Effect, SagaReturnType } from 'redux-saga/effects';
 import { fetchHouse } from '../../api';
 import { Action, FetchedHouseSchema } from '../../interfaces';
 
@@ -33,10 +33,11 @@ export default function reducer(state = initialState, action: Action) {
   }
 }
 
-export function* handleHouse(action: Action) {
+export function* handleHouse(action: Effect) {
   const id = action.payload.id;
+
   try {
-    const data: FetchedHouseSchema = yield call(fetchHouse, id);
+    const data: SagaReturnType<typeof fetchHouse> = yield call(fetchHouse, id);
 
     yield put(setSingleHouse(data));
   } catch (error) {
