@@ -8,7 +8,7 @@ import {
 import { priceHandler } from './utils';
 import { URL_PREFIX } from './constants';
 
-const fetchData = async (URL_SUFFIX: string) => {
+export const fetchData = async (URL_SUFFIX: string) => {
   try {
     const response = await axios(`${URL_PREFIX}${URL_SUFFIX}`);
     const { data } = response;

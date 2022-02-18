@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Initially, component should match snapshot 1`] = `
+<main
+  className="sc-bdvvtL cjxUAN"
+>
+  <h1
+    className="page-title"
+  >
+    Imaginary Real Estate Agency
+  </h1>
+  <div
+    className="spinner-border text-primary"
+  />
+  <div
+    className="container"
+  >
+    <div
+      className="g-lg-3 g-xl-4 g-5 row"
+    />
+  </div>
+</main>
+`;
