@@ -1,7 +1,3 @@
-export interface RealEstateSchema {
-  realEstate: HouseSchema[];
-}
-
 export interface HouseSchema {
   id: string;
   title: string;
@@ -10,6 +6,10 @@ export interface HouseSchema {
   image: string;
   description: string;
   name: string;
+}
+
+export interface RealEstateSchema {
+  realEstate: HouseSchema[];
 }
 
 export interface FetchedHouseSchema {

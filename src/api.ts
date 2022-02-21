@@ -8,7 +8,7 @@ import {
 import { priceHandler } from './utils';
 import { URL_PREFIX } from './constants';
 
-export const fetchData = async (URL_SUFFIX: string) => {
+const fetchData = async (URL_SUFFIX: string) => {
   try {
     const response = await axios(`${URL_PREFIX}${URL_SUFFIX}`);
     const { data } = response;
@@ -21,9 +21,9 @@ export const fetchData = async (URL_SUFFIX: string) => {
 
 export const fetchRealEstate = async (): Promise<RealEstateSchema> => {
   try {
-    const { houses } = await fetchData('houses');
+    const { realEstate } = await fetchData('houses');
 
-    const newRealEstate = houses.map((house: HouseSchema) => {
+    const newRealEstate = realEstate.map((house: HouseSchema) => {
       const { id, title, price, address, image } = house;
 
       return { id, title, price: priceHandler(price), address, image };

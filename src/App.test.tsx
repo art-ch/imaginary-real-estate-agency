@@ -1,7 +1,7 @@
-import { render } from '@testing-library/react';
-
+import renderer from 'react-test-renderer';
 import App from './App';
 
-it('renders App', () => {
-  render(<App />);
+test('App is rendered without crashing', () => {
+  const renderedComponent = renderer.create(<App />).toJSON();
+  expect(renderedComponent).toMatchSnapshot();
 });

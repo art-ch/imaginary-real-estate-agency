@@ -33,11 +33,11 @@ export default function reducer(state = initialState, action: Action) {
   }
 }
 
-export function* handleHouse(action: Effect) {
+export function* handleHouse(action: Action) {
   const id = action.payload.id;
 
   try {
-    const data: SagaReturnType<typeof fetchHouse> = yield call(fetchHouse, id);
+    const data: FetchedHouseSchema = yield call(fetchHouse, id);
 
     yield put(setSingleHouse(data));
   } catch (error) {
