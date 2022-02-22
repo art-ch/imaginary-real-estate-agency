@@ -1,11 +1,11 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { render, screen } from '@testing-library/react';
-import renderer from 'react-test-renderer';
-import House from './HomePage';
+import { mount } from 'enzyme';
+
+import House from './House';
 import store from '../redux/configureStore';
 
-const component = (
+const component = mount(
   <Provider store={store}>
     <BrowserRouter>
       <Routes>
@@ -17,7 +17,6 @@ const component = (
 
 describe('Component', () => {
   it('should match snapshot', () => {
-    const renderedComponent = renderer.create(component).toJSON();
-    expect(renderedComponent).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 });

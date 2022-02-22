@@ -1,11 +1,12 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { render, screen } from '@testing-library/react';
-import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
+
 import HomePage from './HomePage';
+
 import store from '../redux/configureStore';
 
-const component = (
+const component = mount(
   <Provider store={store}>
     <BrowserRouter>
       <Routes>
@@ -15,17 +16,8 @@ const component = (
   </Provider>
 );
 
-describe('Initially, component', () => {
-  it('should render title', () => {
-    render(component);
-
-    expect(
-      screen.getByText('Imaginary Real Estate Agency')
-    ).toBeInTheDocument();
-  });
-
+describe('Component', () => {
   it('should match snapshot', () => {
-    const renderedComponent = renderer.create(component).toJSON();
-    expect(renderedComponent).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 });
