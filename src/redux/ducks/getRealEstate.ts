@@ -1,7 +1,8 @@
 import { call, put } from 'redux-saga/effects';
 
 import { fetchRealEstate } from '../../api';
-import { RealEstateSchema, Action } from '../../interfaces';
+import { RealEstateSchema } from '../../types/api';
+import { Action } from '../../types/redux';
 
 export const GET_HOUSES = 'GET_HOUSES';
 export const SET_HOUSES = 'SET_HOUSES';

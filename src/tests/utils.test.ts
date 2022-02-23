@@ -1,4 +1,4 @@
-import { priceHandler } from './utils';
+import { priceHandler } from '../utils';
 
 it('should receive number and output string with dollar sign and dividers', () => {
   const expectedValues = [

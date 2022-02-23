@@ -1,10 +1,6 @@
 import axios from 'axios';
 
-import {
-  FetchedHouseSchema,
-  HouseSchema,
-  RealEstateSchema
-} from './interfaces';
+import { FetchedHouseSchema, HouseSchema, RealEstateSchema } from './types/api';
 import { priceHandler } from './utils';
 import { URL_PREFIX } from './constants';
 

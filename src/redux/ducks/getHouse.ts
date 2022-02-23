@@ -1,6 +1,7 @@
-import { put, call, Effect, SagaReturnType } from 'redux-saga/effects';
+import { put, call } from 'redux-saga/effects';
 import { fetchHouse } from '../../api';
-import { Action, FetchedHouseSchema } from '../../interfaces';
+import { FetchedHouseSchema } from '../../types/api';
+import { Action } from '../../types/redux';
 
 export const GET_SINGLE_HOUSE = 'GET_HOUSE';
 export const SET_SINGLE_HOUSE = 'SET_HOUSE';

@@ -1,4 +1,4 @@
-import { Theme } from '../interfaces';
+import { Theme } from '../types/styling';
 
 export const theme: Theme = {
   device: {

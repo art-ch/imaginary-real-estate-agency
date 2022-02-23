@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<House /> should match snapshot 1`] = `
+<main
+  className="sc-bdvvtL frHYMz"
+>
+  <div
+    className="img-container container"
+  >
+    <img
+      alt=""
+      className=""
+      src="image"
+    />
+  </div>
+  <div
+    className="my-2 g-4 container"
+  >
+    <h1>
+      House1
+    </h1>
+    <p
+      className="h4"
+    >
+      $228,000
+    </p>
+    <p
+      className="h6"
+    >
+      1997 Yates Ave, Montebello, CA
+    </p>
+    <p>
+      desc
+    </p>
+    <p
+      className="text-uppercase fst-italic"
+    >
+      Ronnie Polla
+    </p>
+    <div
+      className="container-sm p-0 mb-3 container"
+    >
+      <div
+        className="flex-column g-2 row"
+      >
+        <div
+          className="w-100 d-flex col"
+        >
+          <button
+            className="me-2 w-100 btn btn-outline-primary"
+            disabled={false}
+            type="button"
+          >
+            Contact Agent
+          </button>
+          <button
+            className="w-100 btn btn-primary"
+            disabled={false}
+            type="button"
+          >
+            Take a Tour
+          </button>
+        </div>
+        <div
+          className="col"
+        >
+          <button
+            className="w-100 btn btn-warning"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Back
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="p-0 container"
+    >
+      <div
+        className="row"
+      >
+        <h2
+          className="text-center"
+        >
+          Gallery
+        </h2>
+        <div
+          className="mb-3 col-12 col-sm-4 col-xl-3 col"
+        >
+          <a
+            href="img1"
+          >
+            <img
+              alt=""
+              src="img1"
+            />
+          </a>
+        </div>
+        <div
+          className="mb-3 col-12 col-sm-4 col-xl-3 col"
+        >
+          <a
+            href="img2"
+          >
+            <img
+              alt=""
+              src="img2"
+            />
+          </a>
+        </div>
+        <div
+          className="mb-3 col-12 col-sm-4 col-xl-3 col"
+        >
+          <a
+            href="img3"
+          >
+            <img
+              alt=""
+              src="img3"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+`;
