@@ -11,7 +11,10 @@ import { priceHandler } from '../utils';
 import { RootState } from '../types/redux';
 
 const House = () => {
-  const { id } = useParams();
+  const { id } = useParams() as {
+    id: string;
+  };
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
