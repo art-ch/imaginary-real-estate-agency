@@ -1,28 +1,36 @@
-import React, { useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-import HouseWrapper from '../styled/House';
-import { Container, Row, Col, Image, Button, Spinner } from 'react-bootstrap';
-
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Container, Row, Col, Image, Button, Spinner } from 'react-bootstrap';
+
+import HouseWrapper from '../styled/House';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { getSingleHouse, resetSingleHouse } from '../redux/ducks/getHouse';
 import { priceHandler } from '../utils';
+import { RootState } from '../types/redux';
 
 const House = () => {
-  const { id } = useParams();
+  const { id } = useParams() as {
+    id: string;
+  };
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getSingleHouse(id));
     return () => {
-      dispatch(resetSingleHouse(id));
+      dispatch(resetSingleHouse());
     };
     // eslint-disable-next-line
   }, []);
 
-  const currentHouse = useSelector((state) => state.getHouseReducer.house);
+  const currentHouse = useSelector((state: RootState) => {
+    console.log(state);
+
+    return state.getHouseReducer.house;
+  });
   const { house, gallery } = currentHouse;
 
   if (house && gallery) {
@@ -60,7 +68,7 @@ const House = () => {
           <Container className="p-0">
             <Row>
               <h2 className="text-center">Gallery</h2>
-              {gallery.map((image, id) => {
+              {gallery.map((image: string, id: number) => {
                 return (
                   <Col className="mb-3 col-12 col-sm-4 col-xl-3" key={id}>
                     <a href={image}>
@@ -69,12 +77,6 @@ const House = () => {
                   </Col>
                 );
               })}
-            </Row>
-          </Container>
-          <Container className="p-0">
-            <Row className="flex-column flex-sm-row">
-              <Col></Col>
-              <Col></Col>
             </Row>
           </Container>
         </Container>

@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-import HomePageWrapper from '../styled/HomePage';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { Card, Container, Row, Col, Button, Spinner } from 'react-bootstrap';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import HomePageWrapper from '../styled/HomePage';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { getRealEstate } from '../redux/ducks/getRealEstate';
+import { HouseSchema } from '../types/api';
+import { RootState } from '../types/redux';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -14,10 +16,11 @@ const HomePage = () => {
 
   useEffect(() => {
     dispatch(getRealEstate());
+    // eslint-disable-next-line
   }, []);
 
   const realEstateList = useSelector(
-    (state) => state.getRealEstateReducer.realEstate
+    (state: RootState) => state.getRealEstateReducer.realEstate
   );
 
   return (
@@ -28,12 +31,14 @@ const HomePage = () => {
       )}
       <Container>
         <Row className="g-lg-3 g-xl-4 g-5">
-          {realEstateList.map((house) => {
+          {realEstateList.map((house: HouseSchema) => {
             const { id, title, image, price, address } = house;
             return (
               <Col className="col-lg-4 col-xl-3" key={id}>
                 <Card className="mx-auto">
-                  <Card.Img src={image} className="card-image" />
+                  <a href={image}>
+                    <Card.Img src={image} className="card-image" />
+                  </a>
                   <Card.Body>
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>{address}</Card.Text>

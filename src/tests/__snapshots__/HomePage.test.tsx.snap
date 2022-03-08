@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomePage /> should match snapshot 1`] = `
+<main
+  className="sc-bdvvtL cjxUAN"
+>
+  <h1
+    className="page-title"
+  >
+    Imaginary Real Estate Agency
+  </h1>
+  <div
+    className="container"
+  >
+    <div
+      className="g-lg-3 g-xl-4 g-5 row"
+    >
+      <div
+        className="col-lg-4 col-xl-3 col"
+      >
+        <div
+          className="mx-auto card"
+        >
+          <a
+            href="image"
+          >
+            <img
+              className="card-img card-image"
+              src="image"
+            />
+          </a>
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-title h5"
+            >
+              House1
+            </div>
+            <p
+              className="card-text"
+            >
+              1997 Yates Ave, Montebello, CA
+            </p>
+            <div
+              className="price-tag card-title h5"
+            >
+              228000
+            </div>
+            <button
+              className="btn btn-primary"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+`;

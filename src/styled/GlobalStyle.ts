@@ -1,4 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
+import { theme } from './Theme';
+
+const {
+  device: { tablet, laptopL }
+} = theme;
 
 const GlobalStyle = createGlobalStyle`
   img {
@@ -6,20 +11,17 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     object-fit: cover;
   }
-
+  
+@media ${tablet} {
   .img-container {
-    height: 300px;
+    height: 500px;
   }
-  @media (min-width: 767px) {
-    .img-container {
-      height: 500px;
-    }
+}
+@media ${laptopL} {
+  .img-container {
+    height: 500px;
   }
-  @media (min-width: 1200px) {
-    .img-container {
-      height: 570px;
-    }
-  }
+}
 `;
 
 export default GlobalStyle;
