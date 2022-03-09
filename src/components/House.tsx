@@ -26,11 +26,9 @@ const House = () => {
     // eslint-disable-next-line
   }, []);
 
-  const currentHouse = useSelector((state: RootState) => {
-    console.log(state);
-
-    return state.getHouseReducer.house;
-  });
+  const currentHouse = useSelector(
+    (state: RootState) => state.getHouseReducer.house
+  );
   const { house, gallery } = currentHouse;
 
   if (house && gallery) {
