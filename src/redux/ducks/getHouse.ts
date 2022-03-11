@@ -38,7 +38,7 @@ export function* handleHouse(action: Action) {
   const id = action.payload.id as string;
 
   try {
-    const data: FetchedHouseSchema = yield call(() => fetchHouse(id));
+    const data: FetchedHouseSchema = yield call(fetchHouse, id);
 
     yield put(setSingleHouse(data));
   } catch (error) {

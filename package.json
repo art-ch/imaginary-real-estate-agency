@@ -1,11 +1,6 @@
 {
   "name": "imaginary-realtor-agency",
   "version": "0.1.0",
-  "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
-  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",

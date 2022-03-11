@@ -11,7 +11,7 @@ const fetchData = async (URL_SUFFIX: string) => {
 
     return data;
   } catch (error) {
-    throw error;
+    console.error(error);
   }
 };
 
